@@ -4,7 +4,7 @@
 
 // СТРОКИ
 
-const str1 = "test"
+const str1 = "test";
 console.log(str1.length); // СВОЙСТВО  -  Количество символов внутри строки (длина)
 
 const arr = [1, 2, 4, 6, 12];
@@ -14,7 +14,7 @@ const arr = [1, 2, 4, 6, 12];
 // console.log(str1[2]);
 
 
-const str = "test"
+const str = "test";
 // Метод изменения регистров
 console.log(str.toUpperCase());
 console.log(str.toLowerCase());
