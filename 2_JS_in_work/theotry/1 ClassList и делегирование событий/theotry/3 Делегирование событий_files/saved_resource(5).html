@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://ru.js.cx/task/sliding-tree/solution/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+    .tree span:hover {
+      font-weight: bold;
+    }
+
+    .tree span {
+      cursor: pointer;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <ul class="tree" id="tree">
+    <li><span>Животные
+      </span><ul>
+        <li><span>Млекопитающие
+          </span><ul>
+            <li><span>Коровы</span></li>
+            <li><span>Ослы</span></li>
+            <li><span>Собаки</span></li>
+            <li><span>Тигры</span></li>
+          </ul>
+        </li>
+        <li><span>Другие
+          </span><ul>
+            <li><span>Змеи</span></li>
+            <li><span>Птицы</span></li>
+            <li><span>Ящерицы</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><span>Рыбы
+      </span><ul>
+        <li><span>Аквариумные
+          </span><ul>
+            <li><span>Гуппи</span></li>
+            <li><span>Скалярии</span></li>
+          </ul>
+        </li>
+        <li><span>Морские
+          </span><ul>
+            <li><span>Морская форель</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    // поместить все текстовые узлы в элемент <span>
+    // он занимает только то место, которое необходимо для текста
+    for (let li of tree.querySelectorAll('li')) {
+      let span = document.createElement('span');
+      li.prepend(span);
+      span.append(span.nextSibling); // поместить текстовый узел внутрь элемента <span>
+    }
+
+    //  ловим клики на всём дереве
+    tree.onclick = function(event) {
+
+      if (event.target.tagName != 'SPAN') {
+        return;
+      }
+
+      let childrenContainer = event.target.parentNode.querySelector('ul');
+      if (!childrenContainer) return; // нет детей
+
+      childrenContainer.hidden = !childrenContainer.hidden;
+    }
+  </script>
+
+
+
+</body></html>
